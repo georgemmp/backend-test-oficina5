@@ -21,7 +21,6 @@ class PostController {
    */
   async index ({ request }) {
     const { page, userId } = request.get()
-    console.log(userId)
     if (userId === null || userId === undefined) {
       const posts = await Post.query().paginate(page)
       return posts

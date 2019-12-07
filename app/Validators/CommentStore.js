@@ -1,5 +1,7 @@
 'use strict'
 
+const Antl = use('Antl')
+
 class CommentStore {
   get rules () {
     return {
@@ -7,6 +9,10 @@ class CommentStore {
       email: 'required|email',
       body: 'required'
     }
+  }
+
+  get messages () {
+    return Antl.list('validation')
   }
 }
 
