@@ -64,7 +64,7 @@ Informe a senha do banco de dados
 - ##### DB_DATABASE=
 Informe o nome do banco de dados
 
-###OBS
+### OBS
 - É importante criar as migrations com o comando:
 
 ```
