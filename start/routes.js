@@ -30,4 +30,15 @@ Route.group(() => {
       ]
     ))
   Route.resource('posts.comments', 'CommentController')
+    .apiOnly()
+    .validator(new Map(
+      [
+        [
+          ['posts.store'], ['PostStore']
+        ],
+        [
+          ['posts.comments.store'], ['CommentStore']
+        ]
+      ]
+    ))
 }).middleware(['auth'])
