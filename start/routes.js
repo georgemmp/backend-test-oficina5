@@ -17,3 +17,9 @@
 const Route = use('Route')
 
 Route.post('users', 'UserController.store').validator('UserStore')
+Route.post('session', 'SessionController.store').validator('SessionStore')
+
+Route.group(() => {
+  Route.resource('posts', 'PostController')
+    .apiOnly()
+}).middleware(['auth'])
