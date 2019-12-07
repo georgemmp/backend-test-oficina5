@@ -4,6 +4,13 @@
 const Model = use('Model')
 
 class Post extends Model {
+  static boot () {
+    super.boot()
+  }
+
+  user () {
+    return this.belongsTo('App/Models/User')
+  }
 }
 
 module.exports = Post
