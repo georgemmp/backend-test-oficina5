@@ -1,6 +1,7 @@
 'use strict'
 
 const Post = use('App/Models/Post')
+const User = use('App/models/User')
 
 /** @typedef {import('@adonisjs/framework/src/Request')} Request */
 /** @typedef {import('@adonisjs/framework/src/Response')} Response */
@@ -20,10 +21,15 @@ class PostController {
    * @param {View} ctx.view
    */
   async index ({ request }) {
-    const { page } = request.get()
-    const projects = await Post.query().paginate(page)
-
-    return projects
+    const { page, userId } = request.get()
+    console.log(userId)
+    if (userId === null || userId === undefined) {
+      const posts = await Post.query().paginate(page)
+      return posts
+    } else {
+      const postsByUser = await Post.query().where('userId', userId).fetch()
+      return postsByUser
+    }
   }
 
   /**
