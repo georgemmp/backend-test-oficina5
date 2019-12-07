@@ -28,6 +28,14 @@ class ExceptionHandler extends BaseExceptionHandler {
       return response.status(error.status).send(error.messages)
     }
 
+    if (error.name === 'ModelNotFoundException') {
+      return response.status(error.status).send({ error: { message: error.message } })
+    }
+
+    if (error.name === 'InvalidJwtToken') {
+      return response.status(error.status).send({ error: { message: error.message } })
+    }
+
     if (Env.get('NODE_ENV') === 'development') {
       const youch = new Youch(error, request.request)
       const errorJSON = await youch.toJSON()
