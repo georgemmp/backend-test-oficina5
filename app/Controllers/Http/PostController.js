@@ -1,7 +1,6 @@
 'use strict'
 
 const Post = use('App/Models/Post')
-const User = use('App/models/User')
 
 /** @typedef {import('@adonisjs/framework/src/Request')} Request */
 /** @typedef {import('@adonisjs/framework/src/Response')} Response */
