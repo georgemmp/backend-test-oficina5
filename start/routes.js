@@ -22,13 +22,7 @@ Route.post('session', 'SessionController.store').validator('SessionStore')
 Route.group(() => {
   Route.resource('posts', 'PostController')
     .apiOnly()
-    .validator(new Map(
-      [
-        [
-          ['posts.store'], ['PostStore']
-        ]
-      ]
-    ))
+    .validator(new Map([[['posts.store'], ['PostStore']]]))
   Route.resource('posts.comments', 'CommentController')
     .apiOnly()
     .validator(new Map(
@@ -41,4 +35,7 @@ Route.group(() => {
         ]
       ]
     ))
+  Route.resource('users.albums', 'AlbumController')
+    .apiOnly()
+    .validator(new Map([[['users.albums.store'], ['AlbumStore']]]))
 }).middleware(['auth'])
