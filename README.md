@@ -49,6 +49,9 @@ HASH_DRIVER=bcrypt
 - ##### APP_KEY= 
 informe uma chave, por exemplo dA6klRsQtVLUZ0mrxQYt3B6Zm5fNfKde
 
+- ##### DB_CONNECTION=
+Informe mysql
+
 - ##### DB_HOST=
 Informe o endereço do banco
 
@@ -65,6 +68,11 @@ Informe a senha do banco de dados
 Informe o nome do banco de dados
 
 ### OBS
+- Instale as dependências do mysql
+```
+npm i mysql
+```
+
 - É importante criar as migrations com o comando:
 
 ```
