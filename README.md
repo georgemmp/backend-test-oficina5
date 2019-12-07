@@ -4,6 +4,12 @@
 
 [Documentação Adonis](https://adonisjs.com/docs/4.1/installation#_installing_adonisjs)
 
+Para instalar o Adonisjs
+
+```
+npm i -g @adonisjs/cli
+```
+
 ***Instale as dependências***
 
 ```
@@ -58,6 +64,12 @@ Informe a senha do banco de dados
 - ##### DB_DATABASE=
 Informe o nome do banco de dados
 
+###OBS
+- É importante criar as migrations com o comando:
+
+```
+adonis migration:run
+```
 
 
 
