@@ -71,6 +71,24 @@ Informe o nome do banco de dados
 adonis migration:run
 ```
 
+- Para cadastrar um usuário acesse a rota http://{{localhost}}/users
+```
+{
+    "email": "user@mail.com",
+    "username": "user",
+    "password": "123456",
+    "password_confirmation": "123456"
+}
+```
+
+- Para logar na aplicação acesse a rota http://{{localhost}}/session
+```
+{
+  "email": "user@mail.com",
+  "password": "123456"
+}
+```
+
 
 
 
