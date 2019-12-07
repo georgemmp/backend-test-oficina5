@@ -29,4 +29,5 @@ Route.group(() => {
         ]
       ]
     ))
+  Route.resource('posts.comments', 'CommentController')
 }).middleware(['auth'])
