@@ -22,4 +22,11 @@ Route.post('session', 'SessionController.store').validator('SessionStore')
 Route.group(() => {
   Route.resource('posts', 'PostController')
     .apiOnly()
+    .validator(new Map(
+      [
+        [
+          ['posts.store'], ['PostStore']
+        ]
+      ]
+    ))
 }).middleware(['auth'])
